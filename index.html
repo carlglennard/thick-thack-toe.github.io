@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/background.css">
+    <link rel="icon" type="image/png" href="images/Xoxicon.png"> 
+    <title>THICK-THACK-TOE</title>
+    <style>
+        body {
+            background-image: url('images/background.png'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <footer>
+        <h1 style="color:#FEEE3E">THICK</h1><br>
+        <h1 style="color:#9CC8FC;">THACK</h1><br>
+        <h1 style="color:#C960FA;">TOE</h1><br>
+        <a href="mainmenu.html"><button if="startGame">Start Game</button></a>
+        <button id="instructionBtn">Instructions</button>
+        <div id="instructionPopup" class="popup">
+            <div class="popup-content">
+                <span class="close-btn" onclick="closePopup()">&times;</span>
+                <h2>Instructions</h2>
+                <p> Welcome to THICK-THACK-TOE where is this not your typical tic-tac-toe! This game is designed for the player to form a straight line with the symbol assigned to them. The line can be <b>VERTICAL, HORIZONTAL or DIAGONAL</b>. As long as you can connect a line from corner to corner you get a point. <b>FIRST TO 5 POINTS wins the game.</b> <br><br> ADDITIONAL INSTRUCTIONS: <br> 1. Whoever creates the first straight line gets <b>1 POINT</b>. <br> 2. If both players will not manage to get a straight line from corner to corner of the board in either diagonally, vertically or horizontally, it will be a DRAW. <b>0 POINTS</b> shall be given. <br> 3. There will be no take-away moves. <br> 4. In VS COMPUTER game mode, if the player manages to get a draw the computer will get a point.
+                
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        
+        document.getElementById('instructionBtn').addEventListener('click', function () {
+            document.getElementById('instructionPopup').style.display = 'flex';
+        });
+
+        function closePopup() {
+            document.getElementById('instructionPopup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

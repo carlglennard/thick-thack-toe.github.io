@@ -1,0 +1,99 @@
+/* Styles for the fonts, game mode and etc.*/
+@font-face {
+    font-family: myFont;
+    src: url('LeagueGothic-Regular.otf') format('opentype');
+}
+
+
+#tictac {
+    margin-top: 2%;
+    margin-bottom: 3%;
+    color: #17f1e7;
+    letter-spacing: 4px;
+    font-family: myFont;
+    font-size: 100px;
+    text-align: center;
+    text-shadow: 
+    3px  4px     #864AF9, 
+   -1px  1px     #864AF9, 
+    1px -1px     #fffdde, 
+   -1px -1px     #864AF9,
+    1px  1px 6px #F8E559;
+}
+
+#gamemode {
+    margin-top: 5px;
+    font-family: myFont;
+    font-size: 45px;
+    letter-spacing: 2px;
+    color: #9b64ff;
+    text-align: center;
+    letter-spacing: 2px;
+    text-shadow: 0px 0px 10px rgba(137, 46, 255, 0.842);
+}
+
+#levels {
+    margin-top: 30px;
+    text-align: center;
+    font-family: myFont;
+    font-size: 40px;
+    color: #9b64ff;
+    letter-spacing: 2px;
+    text-shadow: 0px 0px 10px rgba(137, 46, 255, 0.842);
+}
+
+#human {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#robot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5%;
+}
+
+a:link,
+a:visited {
+    text-align: center;
+    background-color: #f859d0;
+    padding: 14px 25px;
+    border-radius: 12px;
+    color: #332941;
+    letter-spacing: 1.5px;
+    font-family: myFont;
+    margin: 15px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+a:hover,
+a:active {
+    background-color: #864AF9;
+    color: #17f1e7;
+    text-shadow: 
+    3px  4px     #864AF9, 
+   -1px  1px     #864AF9, 
+    1px -1px     #dd641d, 
+   -1px -1px     #864AF9,
+    1px  1px 6px #069bf1f6;
+    transform: scale(1.1);
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    color: #332941;
+    letter-spacing: 0.8px;
+    width: 100%;
+    background-color: #1d9fa8;
+    padding: 1px;
+    font-size: 14px;
+    font-family: myFont;
+    text-align: center;
+  }

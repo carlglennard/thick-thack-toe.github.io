@@ -1,0 +1,146 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background: url('images/background.png') center/cover no-repeat; 
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.container {
+    text-align: center;
+}
+
+/* ... (rest of your existing CSS code) ... */
+
+
+h1 {
+    color: #333;
+    text-align: center;
+    font-size: 450%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-shadow: 0 0 10px rgb(248, 0, 70); /* Neon text shadow */
+    animation: fadeIn 2s ease-in-out;
+    letter-spacing: 10px; /* Adjust the letter-spacing value */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+h1 {
+    margin: 0;
+    font-size: 7em;
+    animation: bounce 1s infinite alternate; /* Bouncing animation */
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 5px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ccc;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.cell:hover {
+    background-color: #ddd;
+}
+
+.result {
+    color: #333;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 60px; /* Adjust this value to move the button to the right */
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: #70CF82;
+    padding: 30px;
+    border-radius: 5px;
+    text-align: left;
+    position: relative;
+}
+
+.close-btn {
+    cursor: pointer;
+    color: #333;
+    font-size: 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#startGame {
+    display: flex;
+    justify-content: center;
+    margin-left: 50px;
+}

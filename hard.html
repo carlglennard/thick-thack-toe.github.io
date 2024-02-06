@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/board.css">
+        <link rel="icon" type="image/png" href="images/Xoxicon.png">
+        <style>
+            body {
+                background-image: url('images/jaja.gif');
+                background-size: cover;
+                background-repeat: no-repeat;
+                margin: 0;
+                padding: 0;
+            }
+    
+            #returnBtn {
+                position: fixed;
+                top: 10px;
+                left: 10px;
+                padding: 10px;
+                background-color: #4CAF50; /* Green background color */
+                color: white; /* White text color */
+                border: none; /* No border */
+                border-radius: 5px; /* Rounded corners */
+                cursor: pointer; /* Pointer cursor */
+                font-size: 16px; /* Font size */
+            }
+    
+            #hero {
+                position: fixed;
+                top: 10px;
+                right: 10px;
+                padding: 10px;
+            }
+    
+            .btn-primary {
+                background-color: #008CBA; /* Blue background color */
+                color: white; /* White text color */
+                border: none; /* No border */
+                border-radius: 5px; /* Rounded corners */
+                cursor: pointer; /* Pointer cursor */
+                font-size: 16px; /* Font size */
+                padding: 10px; /* Padding */
+                margin-right: 10px; /* Margin right for spacing */
+            }
+        </style>
+        <title>Hard</title>
+        <script src="js/hard.js"></script>
+    </head>
+    
+    <body>
+        <h1 id="title">THICK-THACK-TOE</h1>
+        <h1 id="scoreboard">Player: X = 0 | Computer: O = 0</h1>
+        <div id="board">
+            <div class="flex-container">
+                <div class="buttons flex-container" id="but0" onclick="buttonFunc(0)"></div>
+                <div class="buttons flex-container" id="but1" onclick="buttonFunc(1)"></div>
+                <div class="buttons flex-container" id="but2" onclick="buttonFunc(2)"></div>
+                <div class="buttons flex-container" id="but3" onclick="buttonFunc(3)"></div>
+                <div class="buttons flex-container" id="but4" onclick="buttonFunc(4)"></div>
+                <div class="buttons flex-container" id="but5" onclick="buttonFunc(5)"></div>
+            </div>
+    
+            <div class="flex-container">
+                <div class="buttons flex-container" id="but6" onclick="buttonFunc(6)"></div>
+                <div class="buttons flex-container" id="but7" onclick="buttonFunc(7)"></div>
+                <div class="buttons flex-container" id="but8" onclick="buttonFunc(8)"></div>
+                <div class="buttons flex-container" id="but9" onclick="buttonFunc(9)"></div>
+                <div class="buttons flex-container" id="but10" onclick="buttonFunc(10)"></div>
+                <div class="buttons flex-container" id="but11" onclick="buttonFunc(11)"></div>
+            </div>
+    
+            <div class="flex-container">
+                <div class="buttons flex-container" id="but12" onclick="buttonFunc(12)"></div>
+                <div class="buttons flex-container" id="but13" onclick="buttonFunc(13)"></div>
+                <div class="buttons flex-container" id="but14" onclick="buttonFunc(14)"></div>
+                <div class="buttons flex-container" id="but15" onclick="buttonFunc(15)"></div>
+                <div class="buttons flex-container" id="but16" onclick="buttonFunc(16)"></div>
+                <div class="buttons flex-container" id="but17" onclick="buttonFunc(17)"></div>
+            </div>
+    
+            <div class="flex-container">
+                <div class="buttons flex-container" id="but18" onclick="buttonFunc(18)"></div>
+                <div class="buttons flex-container" id="but19" onclick="buttonFunc(19)"></div>
+                <div class="buttons flex-container" id="but20" onclick="buttonFunc(20)"></div>
+                <div class="buttons flex-container" id="but21" onclick="buttonFunc(21)"></div>
+                <div class="buttons flex-container" id="but22" onclick="buttonFunc(22)"></div>
+                <div class="buttons flex-container" id="but23" onclick="buttonFunc(23)"></div>
+            </div>
+    
+            <div class="flex-container">
+                <div class="buttons flex-container" id="but24" onclick="buttonFunc(24)"></div>
+                <div class="buttons flex-container" id="but25" onclick="buttonFunc(25)"></div>
+                <div class="buttons flex-container" id="but26" onclick="buttonFunc(26)"></div>
+                <div class="buttons flex-container" id="but27" onclick="buttonFunc(27)"></div>
+                <div class="buttons flex-container" id="but28" onclick="buttonFunc(28)"></div>
+                <div class="buttons flex-container" id="but29" onclick="buttonFunc(29)"></div>
+            </div>
+        </div>
+
+        <h2 id="result"></h2>
+        
+        <div class="flex-container">
+            <button id="nextg" onclick="nextg_button()">RESET ROUND</button>
+            <div id="filler"></div>
+            <button id="reset_score" onclick="reset_score()">RESET GAME</button>
+        </div>
+        <nav class="navbar" id="hero">
+            <button class="btn btn-primary" onclick="playAudio()" type="button">Play Music</button>
+            <input type="range" id="volume-slider">
+        </nav>
+    
+        <button id="returnBtn" onclick="goBack()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M512 256A256 256 0 1 0 0 256a256 256 0 1 0 512 0zM271 135c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-87 87 87 87c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0L167 273c-9.4-9.4-9.4-24.6 0-33.9L271 135z"/></svg>
+            Return
+        </button>
+    
+        <!-- Add the audio element for the click sound -->
+        <audio id="clickSound" src="music.mp3"></audio>
+    
+        <!-- Audio Element -->
+        <audio id="myAudio">
+            <source src="music.mp3" type="audio/ogg">
+        </audio>
+    
+        <script>
+            // Function to navigate back
+            function goBack() {
+                window.history.back();
+            }
+    
+            // Function to play the click sound
+            function playClickSound() {
+                document.getElementById('clickSound').play();
+            }
+    
+            // New script for audio control
+            var x = document.getElementById("myAudio");
+            var sliderLevel = document.querySelector('#volume-slider')
+            x.volume = sliderLevel.value / 100
+            sliderLevel.addEventListener("change", function (e) {
+                x.volume = e.currentTarget.value / 100;
+            })
+    
+            function playAudio() {
+                if (x.paused) {
+                    x.play();
+                    document.querySelector(".btn-primary").innerHTML = "Pause Music";
+                } else {
+                    x.pause();
+                    document.querySelector(".btn-primary").innerHTML = "Play Music";
+                }
+            }
+            </script>
+    </body>
+</html>

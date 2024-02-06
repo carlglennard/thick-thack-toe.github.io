@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="images/Xoxicon.png"> 
+    <style>
+        body {
+            background-image: url('images/Homepage.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+        }
+
+        #returnBtn {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            padding: 10px;
+            background-color: #4CAF50; /* Green background color */
+            color: white; /* White text color */
+            border: none; /* No border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor */
+            font-size: 16px; /* Font size */
+        }
+
+        #hero {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 10px;
+        }
+
+        .btn-primary {
+            background-color: #008CBA; /* Blue background color */
+            color: white; /* White text color */
+            border: none; /* No border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor */
+            font-size: 16px; /* Font size */
+            padding: 10px; /* Padding */
+            margin-right: 10px; /* Margin right for spacing */
+        }
+    </style>
+    <title>THICK-THACK-TOE</title>
+</head>
+
+<body>
+    <nav class="navbar" id="hero">
+        <button class="btn btn-primary" onclick="playAudio(this)" type="button">Play Music</button>
+        <input type="range" id="volume-slider">
+    </nav>
+
+    <h1 id="tictac">THICK-THACK-TOE</h1>
+    <h1 id="gamemode">Choose Your Game</h1>
+    <div id="human">
+        <a href="multiplayer.html">VS HUMAN</a>
+    </div>
+    <button id="returnBtn" onclick="goBack()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M512 256A256 256 0 1 0 0 256a256 256 0 1 0 512 0zM271 135c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-87 87 87 87c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0L167 273c-9.4-9.4-9.4-24.6 0-33.9L271 135z"/></svg>
+        Return
+    </button>
+    <!-- Add the audio element for the click sound -->
+    <audio id="clickSound" src="music.mp3"></audio>
+
+    <!-- Audio Element -->
+    <audio id="myAudio">
+        <source src="music.mp3" type="audio/ogg">
+    </audio>
+
+    <h1 id="levels">vs COMPUTER</h2>
+    <div id="robot">    
+        <a href="easy.html">Easy</a>
+        <a href="medium.html">Medium</a>
+        <a href="hard.html">Hard</a>
+    </div>
+
+    <script>
+        // Function to navigate back
+        function goBack() {
+            window.history.back();
+        }
+
+        // Function to play the click sound
+        function playClickSound() {
+            document.getElementById('clickSound').play();
+        }
+
+        // New script for audio control
+        var x = document.getElementById("myAudio");
+        var sliderLevel = document.querySelector('#volume-slider')
+        x.volume = sliderLevel.value / 100
+        sliderLevel.addEventListener("change", function (e) {
+            x.volume = e.currentTarget.value / 100;
+        })
+
+        function playAudio(btn) {
+            if (x.paused) {
+                x.play();
+                document.querySelector(".btn-primary").innerHTML = "Pause Music";
+            } else {
+                x.pause();
+                document.querySelector(".btn-primary").innerHTML = "Play Music";
+            }
+        }
+    </script>
+</body>
+
+<footer>
+    <p>BERNADO, ONATE, CAPAWING, HILARIO, MONTINOLA</p>
+</footer>
+</html>
